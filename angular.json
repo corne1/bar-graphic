@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -11,21 +14,21 @@
         }
       },
       "root": "",
-      "sourceRoot": "src",
+      "sourceRoot": "public",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/bar-graphic",
-            "index": "src/index.html",
+            "index": "public/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "public/favicon.ico",
+              "public/assets"
             ],
             "styles": [
               "src/styles.scss"
@@ -87,8 +90,8 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "public/favicon.ico",
+              "public/assets"
             ],
             "styles": [
               "src/styles.scss"
