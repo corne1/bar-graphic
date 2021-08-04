@@ -4,10 +4,13 @@
         <ul class="card-list">
             <li *ngFor="let perMonth of barData" class="card-list__li">
                 <span class="bar-subtitle">{{perMonth.month}}</span>
-                <div class="bar-progress" 
-                    [ngClass]="perMonth.rate > 50 ? '' : 'primary'" 
-                    [ngStyle]="{'max-width': perMonth.rate+'%'}">
-                    <p class="bar-invoice">{{perMonth.invoice | numberEdit}} руб</p>
+                <div class="bar-progress"  
+                    [ngClass]="perMonth.rate > 50 ? '' : 'primary'"
+                    [ngStyle]="{'grid-template-columns': perMonth.rate + '% auto'}">
+                    <div class="bar-line"></div>
+                    <span
+                        class="bar-invoice">
+                        {{perMonth.invoice | numberEdit}} руб</span>
                 </div>
             </li>
         </ul>
